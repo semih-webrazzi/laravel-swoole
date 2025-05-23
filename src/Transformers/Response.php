@@ -82,8 +82,10 @@ class Response
         }
 
         // headers
-        // allPreserveCaseWithoutCookies() doesn't exist before Laravel 5.3
-        $headers = $illuminateResponse->headers->allPreserveCase();
+        // Use allPreserveCase() and manually remove cookies for compatibility
+        $headers = method_exists($illuminateResponse->headers, 'allPreserveCase') 
+            ? $illuminateResponse->headers->allPreserveCase() 
+            : $illuminateResponse->headers->all();
         if (isset($headers['Set-Cookie'])) {
             unset($headers['Set-Cookie']);
         }

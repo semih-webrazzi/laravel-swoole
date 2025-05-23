@@ -15,11 +15,11 @@
          stopOnFailure="false"
          verbose="true"
          printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer">
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+    <coverage>
+        <include>
             <directory suffix=".php">./src</directory>
-        </whitelist>
-    </filter>
+        </include>
+    </coverage>
     <testsuites>
         <testsuite name="Laravel Swoole Http Test Suite">
             <directory suffix="Test.php">./tests</directory>

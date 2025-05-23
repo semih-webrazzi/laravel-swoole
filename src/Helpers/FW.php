@@ -74,7 +74,7 @@ final class FW
         }
 
         /** @var \Laravel\Lumen\Application $app */
-        $app = call_user_func('Laravel\Lumen\Application::getInstance');
+        $app = \Laravel\Lumen\Application::getInstance();
 
         if ($version = static::extractVersion($app->version(), $expression)) {
             return $version;

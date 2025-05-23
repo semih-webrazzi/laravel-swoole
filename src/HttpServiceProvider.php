@@ -20,12 +20,6 @@ use SwooleTW\Http\Coroutine\Connectors\ConnectorFactory;
  */
 abstract class HttpServiceProvider extends ServiceProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
 
     /**
      * @var boolean

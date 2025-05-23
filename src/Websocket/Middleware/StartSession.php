@@ -59,7 +59,10 @@ class StartSession
     protected function startSession(Request $request)
     {
         return tap($this->getSession($request), function (Session $session) use ($request) {
-            $session->setRequestOnHandler($request);
+            // setRequestOnHandler is deprecated in Laravel 11
+            if (method_exists($session, 'setRequestOnHandler')) {
+                $session->setRequestOnHandler($request);
+            }
 
             $session->start();
         });
@@ -86,6 +89,12 @@ class StartSession
      */
     protected function sessionConfigured()
     {
-        return ! is_null($this->manager->getSessionConfig()['driver'] ?? null);
+        // getSessionConfig method compatibility for Laravel 11
+        if (method_exists($this->manager, 'getSessionConfig')) {
+            return ! is_null($this->manager->getSessionConfig()['driver'] ?? null);
+        }
+        
+        // Fallback for Laravel 11+ using config helper
+        return ! is_null(config('session.driver'));
     }
 }

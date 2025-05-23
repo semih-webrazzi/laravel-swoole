@@ -68,7 +68,7 @@ class Request
      */
     protected function createIlluminateRequest($get, $post, $cookie, $files, $server, $content = null)
     {
-        IlluminateRequest::enableHttpMethodParameterOverride();
+        // HTTP method parameter override is handled differently in Laravel 11
 
         /*
         |--------------------------------------------------------------------------
