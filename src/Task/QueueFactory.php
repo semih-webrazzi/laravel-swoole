@@ -16,7 +16,7 @@ class QueueFactory
      *
      * @const string
      */
-    public const CHANGE_VERSION = '11.0';
+    public const CHANGE_VERSION = '12.0';
 
     /**
      * Swoole task queue class
@@ -53,6 +53,10 @@ class QueueFactory
      */
     public static function stub(string $version): string
     {
+        if (version_compare($version, '12.0', '>=')) {
+            return __DIR__ . '/../../stubs/12.0/SwooleTaskQueue.stub';
+        }
+        
         if (version_compare($version, '11.0', '>=')) {
             return __DIR__ . '/../../stubs/11.0/SwooleTaskQueue.stub';
         }

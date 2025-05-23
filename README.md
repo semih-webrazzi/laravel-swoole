@@ -6,7 +6,7 @@
 
 # Laravel-Swoole
 
-![php-badge](https://img.shields.io/badge/php-%3E%3D%208.1-8892BF.svg)
+![php-badge](https://img.shields.io/badge/php-%3E%3D%208.2-8892BF.svg)
 [![packagist-badge](https://img.shields.io/packagist/v/swooletw/laravel-swoole.svg)](https://packagist.org/packages/swooletw/laravel-swoole)
 [![Total Downloads](https://poser.pugx.org/swooletw/laravel-swoole/downloads)](https://packagist.org/packages/swooletw/laravel-swoole)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/swooletw/laravel-swoole/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/swooletw/laravel-swoole/?branch=master)
@@ -18,7 +18,7 @@ This package provides a high performance HTTP server to speed up your Laravel/Lu
 
 | PHP     | Laravel | Lumen | Swoole  |
 |:-------:|:-------:|:-----:|:-------:|
-| >=8.1   | 10.x, 11.x | 10.x, 11.x | >=4.3.1 |
+| >=8.2   | 10.x, 11.x, 12.x | 10.x, 11.x, 12.x | >=4.3.1 |
 
 ## Features
 
